@@ -11,7 +11,7 @@ public class Main {
 
     public static int minSalary(Employee[] employee) { // минимальная зарплата
         Employee[] employees = new Employee[10];
-        int minWaste = 1000;
+        int minWaste = 10000;
         for (Employee number : employee) {
             if (number.getSalary() < minWaste) {
                 minWaste = number.getSalary();
@@ -25,7 +25,7 @@ public class Main {
         return middle;
     }
     public static int maxSalary(Employee[] employee) { // максимальная зарплата
-        int maxWaste = employee.length;
+        int maxWaste = 10000;
         for (Employee number1 : employee) {
             if (number1.getSalary() > maxWaste) {
                 maxWaste = number1.getSalary();
