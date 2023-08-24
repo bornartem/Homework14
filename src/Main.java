@@ -1,6 +1,7 @@
 import java.util.Arrays;
 
 public class Main {
+    private static Employee[] employees = new Employee[10];
     public static int sumSalary(Employee[] employee) { // сумма зарплат в месяц
         int sum = 0;
         for (int i = 0; i < employee.length; i++) {
@@ -10,8 +11,7 @@ public class Main {
     }
 
     public static int minSalary(Employee[] employee) { // минимальная зарплата
-        Employee[] employees = new Employee[10];
-        int minWaste = 10000;
+        int minWaste = Integer.MAX_VALUE;
         for (Employee number : employee) {
             if (number.getSalary() < minWaste) {
                 minWaste = number.getSalary();
@@ -25,7 +25,7 @@ public class Main {
         return middle;
     }
     public static int maxSalary(Employee[] employee) { // максимальная зарплата
-        int maxWaste = 10000;
+        int maxWaste = 0;
         for (Employee number1 : employee) {
             if (number1.getSalary() > maxWaste) {
                 maxWaste = number1.getSalary();
@@ -35,10 +35,8 @@ public class Main {
     }
 
     public static void main(String[] args) { // выводим toString
-        Employee[] employees = new Employee[10];
         for (int i = 0; i < 10; i++) {
             employees[i] = new Employee("Шварценеггер Арнольд Иванович " + i + " ; ", " " + i + " ; ", 10000 + i);
-            Employee employee = employees[i];
             System.out.println(employees[i]);
         }
         for (int i = 0; i < 10; i++) { // выводим ФИО
