@@ -2,17 +2,17 @@ import java.util.Arrays;
 
 public class Main {
     private static Employee[] employees = new Employee[10];
-    public static int sumSalary(Employee[] employee) { // сумма зарплат в месяц
+    public static int sumSalary() { // сумма зарплат в месяц
         int sum = 0;
-        for (int i = 0; i < employee.length; i++) {
-            sum += employee[i].getSalary();
+        for (int i = 0; i < employees.length; i++) {
+            sum += employees[i].getSalary();
         }
         return sum;
     }
 
-    public static int minSalary(Employee[] employee) { // минимальная зарплата
+    public static int minSalary() { // минимальная зарплата
         int minWaste = Integer.MAX_VALUE;
-        for (Employee number : employee) {
+        for (Employee number : employees) {
             if (number.getSalary() < minWaste) {
                 minWaste = number.getSalary();
             }
@@ -20,13 +20,13 @@ public class Main {
         return minWaste;
     }
 
-    public static int averageSalary(Employee[] employee) { // средняя зарплата
-        int middle = sumSalary(employee) / employee.length;
+    public static int averageSalary() { // средняя зарплата
+        int middle = sumSalary() / employees.length;
         return middle;
     }
-    public static int maxSalary(Employee[] employee) { // максимальная зарплата
+    public static int maxSalary() { // максимальная зарплата
         int maxWaste = 0;
-        for (Employee number1 : employee) {
+        for (Employee number1 : employees) {
             if (number1.getSalary() > maxWaste) {
                 maxWaste = number1.getSalary();
             }
@@ -41,16 +41,16 @@ public class Main {
         }
         for (int i = 0; i < 10; i++) { // выводим ФИО
             employees[i] = new Employee("Шварценеггер Арнольд Иванович " + i + "; ", " " + i + " ; ", 10000 + i);
-            Employee employee = employees[i];
+          Employee employee = employees[i];
             System.out.println(employee.getDataEmployers());
         }
-        int total = sumSalary(employees);
+        int total = sumSalary();
         System.out.println("Сумма затрат на зарплаты в месяц составляет " + total + " рублей.");
-        int total1 = minSalary(employees);
+        int total1 = minSalary();
         System.out.println("Минимальная зарплата в месяц составляет " + total1 + " рублей.");
-        int total2 = maxSalary(employees);
+        int total2 = maxSalary();
         System.out.println("Максимальная зарплата в месяц составляет " + total2 + " рублей.");
-        int total3 = averageSalary(employees);
+        int total3 = averageSalary();
         System.out.println("Средняя зарплата в месяц составляет " + total3 + " рублей.");
     }
 
